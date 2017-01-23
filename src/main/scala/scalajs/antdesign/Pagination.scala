@@ -3,6 +3,7 @@ package scalajs.antdesign
 import japgolly.scalajs.react.CallbackTo
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 
 /**
   * https://github.com/react-component/pagination#api
@@ -115,13 +116,42 @@ object Pagination {
     }
   }
 
-  object Locale {
-    val en_US: Locale = ???
-    val fr_BE: Locale = ???
-    val ru_RU: Locale = ???
-    val sv_SE: Locale = ???
-    val zh_CN: Locale = ???
+  @js.native
+  private trait LocaleReference extends js.Any {
+    val items_per_page: String = js.native
+    val jump_to: String        = js.native
+    val page: String           = js.native
+    val prev_page: String      = js.native
+    val next_page: String      = js.native
+    val prev5: String          = js.native
+    val next5: String          = js.native
+  }
 
+  private def toLocale(localeReference: LocaleReference): Locale =
+    Locale(localeReference.items_per_page,
+           localeReference.jump_to,
+           localeReference.page,
+           localeReference.prev_page,
+           localeReference.next_page,
+           localeReference.prev5,
+           localeReference.next5)
+
+  @js.native
+  @JSImport("lib/pagination/locale/en_US.js", JSImport.Default)
+  private object _en_US extends LocaleReference
+
+  @js.native
+  @JSImport("lib/pagination/locale/ru_RU.js", JSImport.Default)
+  private object _ru_RU extends LocaleReference
+
+  @js.native
+  @JSImport("lib/pagination/locale", JSImport.Default)
+  private object _zh_CN extends LocaleReference
+
+  object Locale {
+    val en_US: Locale = toLocale(_en_US)
+    val ru_RU: Locale = toLocale(_ru_RU)
+    val zh_CN: Locale = toLocale(_zh_CN)
   }
 
 }

@@ -29,7 +29,6 @@ import scala.scalajs.js
   *                  [[scalajs.antdesign.TimePicker.Placement.TopLeft]], [[scalajs.antdesign.TimePicker.Placement.TopRight]], [[scalajs.antdesign.TimePicker.Placement.BottomLeft]], [[scalajs.antdesign.TimePicker.Placement.BottomRight]]
   * @param transitionName
   */
-
 case class TimePicker(prefixCls: js.UndefOr[String] = js.undefined,
                       clearText: js.UndefOr[String] = js.undefined,
                       disabled: js.UndefOr[Boolean] = js.undefined,
@@ -52,74 +51,74 @@ case class TimePicker(prefixCls: js.UndefOr[String] = js.undefined,
                       transitionName: js.UndefOr[String] = js.undefined) {
   def toJS = {
     val p = js.Dynamic.literal()
-    prefixCls.foreach{ x =>
+    prefixCls.foreach { x =>
       p.updateDynamic("prefixCls")(prefixCls)
     }
-    clearText.foreach{ x =>
+    clearText.foreach { x =>
       p.updateDynamic("clearText")(clearText)
     }
-    disabled.foreach{ x =>
+    disabled.foreach { x =>
       p.updateDynamic("disabled")(disabled)
     }
-    open.foreach{ x =>
+    open.foreach { x =>
       p.updateDynamic("open")(x)
     }
-    defaultValue.foreach{ x =>
+    defaultValue.foreach { x =>
       p.updateDynamic("defaultValue")(x)
     }
-    defaultOpenValue.foreach{ x =>
+    defaultOpenValue.foreach { x =>
       p.updateDynamic("defaultOpenValue")(x)
     }
-    value.foreach{ x =>
+    value.foreach { x =>
       p.updateDynamic("value")(x)
     }
-    placeholder.foreach{ x =>
+    placeholder.foreach { x =>
       p.updateDynamic("placeholder")(x)
     }
-    showHour.foreach{ x =>
+    showHour.foreach { x =>
       p.updateDynamic("showHour")(x)
     }
-    showMinute.foreach{ x =>
+    showMinute.foreach { x =>
       p.updateDynamic("showHour")(x)
     }
-    showSecond.foreach{ x =>
+    showSecond.foreach { x =>
       p.updateDynamic("showSecond")(x)
     }
-    format.foreach{ x =>
+    format.foreach { x =>
       p.updateDynamic("format")(x)
     }
-    disabledHours.foreach{ x =>
+    disabledHours.foreach { x =>
       p.updateDynamic("disabledHours")(
         (v1: Date) => x(v1).runNow()
       )
     }
-    disabledMinutes.foreach{ x =>
+    disabledMinutes.foreach { x =>
       p.updateDynamic("disabledMinutes")(
         (v1: Date) => x(v1).runNow()
       )
     }
-    disabledSeconds.foreach{ x =>
+    disabledSeconds.foreach { x =>
       p.updateDynamic("disabledSeconds")(
         (v1: Date) => x(v1).runNow()
       )
     }
-    hideDisabledOptions.foreach{ x =>
+    hideDisabledOptions.foreach { x =>
       p.updateDynamic("hideDisabledOptions")(x)
     }
-    onChange.foreach{ x =>
+    onChange.foreach { x =>
       p.updateDynamic("onChange")(
         (v1: Date) => x(v1).runNow()
       )
     }
-    addon.foreach{ x =>
+    addon.foreach { x =>
       p.updateDynamic("addon")(
         (v1: js.Dynamic) => x(v1).runNow()
       )
     }
-    placement.foreach{ x =>
+    placement.foreach { x =>
       p.updateDynamic("placement")(x.id)
     }
-    transitionName.foreach{ x =>
+    transitionName.foreach { x =>
       p.updateDynamic("transitionName")(x)
     }
     p

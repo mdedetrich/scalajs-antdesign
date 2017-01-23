@@ -14,7 +14,14 @@ isScalaJSProject := true
 organization := "org.mdedetrich"
 
 libraryDependencies ++= Seq(
-  "org.webjars.npm" % "antd" % "2.6.3",
-  "ru.pavkin" %%% "scala-js-momentjs" % "0.4.1",
-  "com.github.japgolly.scalajs-react" %%% "core" % "0.11.3"
+  "ru.pavkin"                         %%% "scala-js-momentjs" % "0.4.1",
+  "com.github.japgolly.scalajs-react" %%% "core"              % "0.11.3"
 )
+
+npmDependencies in Compile ++= Seq("antd" -> "~2.6.3")
+
+npmDevDependencies in Compile += "expose-loader" -> "0.7.1"
+
+webpackConfigFile := Some(baseDirectory.value / "webpack.config.js")
+
+enablePlugins(ScalaJSBundlerPlugin)

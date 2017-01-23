@@ -4,6 +4,7 @@ import japgolly.scalajs.react.{CallbackTo, React, ReactComponentU_, ReactElement
 import moment.Date
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation.JSImport
 
 /**
   * https://github.com/react-component/calendar#api
@@ -134,13 +135,13 @@ object Calendar {
                           disabledSeconds: js.UndefOr[js.Array[Int]]) {
     def toJS = {
       val p = js.Dynamic.literal()
-      disabledHours.foreach{ x =>
+      disabledHours.foreach { x =>
         p.updateDynamic("disabledHours")(disabledHours)
       }
-      disabledMinutes.foreach{ x =>
+      disabledMinutes.foreach { x =>
         p.updateDynamic("disabledMinutes")(disabledMinutes)
       }
-      disabledSeconds.foreach{ x =>
+      disabledSeconds.foreach { x =>
         p.updateDynamic("disabledSeconds")(disabledSeconds)
       }
       p
@@ -215,18 +216,125 @@ object Calendar {
     }
   }
 
+  @js.native
+  private trait LocaleReference extends js.Any {
+    val today: String                        = js.native
+    val now: String                          = js.native
+    val backToToday: String                  = js.native
+    val ok: String                           = js.native
+    val clear: String                        = js.native
+    val month: String                        = js.native
+    val year: String                         = js.native
+    val timeSelect: String                   = js.native
+    val dateSelect: String                   = js.native
+    val monthSelect: String                  = js.native
+    val yearSelect: String                   = js.native
+    val decadeSelect: String                 = js.native
+    val yearFormat: String                   = js.native
+    val dateFormat: String                   = js.native
+    val dayFormat: String                    = js.native
+    val dateTimeFormat: String               = js.native
+    val monthFormat: String                  = js.native
+    val monthBeforeYear: js.UndefOr[Boolean] = js.native
+    val previousMonth: String                = js.native
+    val nextMonth: String                    = js.native
+    val previousYear: String                 = js.native
+    val nextYear: String                     = js.native
+    val previousDecade: String               = js.native
+    val nextDecade: String                   = js.native
+    val previousCentury: String              = js.native
+    val nextCentury: String                  = js.native
+  }
+
+  private def toLocale(localeReference: LocaleReference): Locale = Locale(
+    localeReference.today,
+    localeReference.now,
+    localeReference.backToToday,
+    localeReference.ok,
+    localeReference.clear,
+    localeReference.month,
+    localeReference.year,
+    localeReference.timeSelect,
+    localeReference.dateSelect,
+    localeReference.monthSelect,
+    localeReference.yearSelect,
+    localeReference.decadeSelect,
+    localeReference.yearFormat,
+    localeReference.dateFormat,
+    localeReference.dayFormat,
+    localeReference.dateTimeFormat,
+    localeReference.monthFormat,
+    localeReference.monthBeforeYear,
+    localeReference.previousMonth,
+    localeReference.nextMonth,
+    localeReference.previousYear,
+    localeReference.nextYear,
+    localeReference.previousDecade,
+    localeReference.nextDecade,
+    localeReference.previousCentury,
+    localeReference.nextCentury
+  )
+
+  @js.native
+  @JSImport("lib/calendar/locale/cs_CZ.js", JSImport.Default)
+  private object _cs_CZ extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/da_DK.js", JSImport.Default)
+  private object _da_DK extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/de_DE.js", JSImport.Default)
+  private object _de_DE extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/en_US.js", JSImport.Default)
+  private object _en_US extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/fr_BE.js", JSImport.Default)
+  private object _fr_BE extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/ja_JP.js", JSImport.Default)
+  private object _ja_JP extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/ko_KR.js", JSImport.Default)
+  private object _ko_KR extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/pl_PL.js", JSImport.Default)
+  private object _pl_PL extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/pt_BR.js", JSImport.Default)
+  private object _pt_BR extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/ru_RU.js", JSImport.Default)
+  private object _ru_RU extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/sv_SE.js", JSImport.Default)
+  private object _sv_SE extends LocaleReference
+
+  @js.native
+  @JSImport("lib/calendar/locale/zh_CN.js", JSImport.Default)
+  private object _zh_CN extends LocaleReference
+
   object Locale {
-    val cs_CZ: Locale = ???
-    val da_DK: Locale = ???
-    val de_DE: Locale = ???
-    val en_US: Locale = ???
-    val fr_BE: Locale = ???
-    val ja_JP: Locale = ???
-    val ko_KR: Locale = ???
-    val pl_PL: Locale = ???
-    val pt_BR: Locale = ???
-    val ru_RU: Locale = ???
-    val sv_SE: Locale = ???
-    val zh_CN: Locale = ???
+    val cs_CZ: Locale = toLocale(_cs_CZ)
+    val da_DK: Locale = toLocale(_da_DK)
+    val de_DE: Locale = toLocale(_de_DE)
+    val en_US: Locale = toLocale(_en_US)
+    val fr_BE: Locale = toLocale(_fr_BE)
+    val ja_JP: Locale = toLocale(_ja_JP)
+    val ko_KR: Locale = toLocale(_ko_KR)
+    val pl_PL: Locale = toLocale(_pl_PL)
+    val pt_BR: Locale = toLocale(_pt_BR)
+    val ru_RU: Locale = toLocale(_ru_RU)
+    val sv_SE: Locale = toLocale(_sv_SE)
+    val zh_CN: Locale = toLocale(_zh_CN)
   }
 }

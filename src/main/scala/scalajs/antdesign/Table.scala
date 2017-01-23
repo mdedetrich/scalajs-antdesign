@@ -34,7 +34,6 @@ import scala.scalajs.js.|
   * @param emptyText Display text when data is empty
   * @param columns The columns config of table, see table below
   */
-
 case class Table(prefixCls: js.UndefOr[js.Array[String]] = js.undefined,
                  className: js.UndefOr[String] = js.undefined,
                  useFixedHeader: js.UndefOr[Boolean] = js.undefined,
@@ -206,7 +205,7 @@ object Table {
       colSpan.foreach { x =>
         p.updateDynamic("colSpan")(x)
       }
-      title.foreach{ x =>
+      title.foreach { x =>
         p.updateDynamic("title")(x)
       }
       dataIndex.foreach { x =>
