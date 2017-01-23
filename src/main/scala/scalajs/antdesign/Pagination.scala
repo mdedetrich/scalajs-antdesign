@@ -1,6 +1,6 @@
 package scalajs.antdesign
 
-import japgolly.scalajs.react.CallbackTo
+import japgolly.scalajs.react.{CallbackTo, React, ReactComponentU_, ReactNode}
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -93,6 +93,12 @@ case class Pagination(defaultCurrent: js.UndefOr[Int] = js.undefined,
     }
     p
   }
+
+  def apply(children: ReactNode*) = {
+    val f =
+      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.Pagination)
+    f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
+  }
 }
 
 object Pagination {
@@ -145,7 +151,7 @@ object Pagination {
   private object _ru_RU extends LocaleReference
 
   @js.native
-  @JSImport("lib/pagination/locale", JSImport.Default)
+  @JSImport("lib/pagination/locale/zh_CN.js", JSImport.Default)
   private object _zh_CN extends LocaleReference
 
   object Locale {
