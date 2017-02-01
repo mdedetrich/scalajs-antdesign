@@ -9,8 +9,6 @@ scalaVersion in ThisBuild := scalaVersion211
 
 crossScalaVersions in ThisBuild := Seq(scalaVersion212, scalaVersion211)
 
-isScalaJSProject := true
-
 organization := "org.mdedetrich"
 
 libraryDependencies ++= Seq(
@@ -18,3 +16,5 @@ libraryDependencies ++= Seq(
   "ru.pavkin"                         %%% "scala-js-momentjs" % "0.4.1",
   "com.github.japgolly.scalajs-react" %%% "core"              % "0.11.3"
 )
+
+enablePlugins(ScalaJSPlugin)
