@@ -12,7 +12,7 @@ crossScalaVersions in ThisBuild := Seq(scalaVersion212, scalaVersion211)
 organization := "org.mdedetrich"
 
 libraryDependencies ++= Seq(
-  "org.webjars.npm"                   % "antd"                % "2.6.3",
+  "org.webjars.npm"                   % "antd"                % "2.6.4",
   "ru.pavkin"                         %%% "scala-js-momentjs" % "0.4.1",
   "com.github.japgolly.scalajs-react" %%% "core"              % "0.11.3"
 )
