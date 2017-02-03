@@ -13,7 +13,7 @@ organization := "org.mdedetrich"
 
 libraryDependencies ++= Seq(
   "org.webjars.npm"                   % "antd"                % "2.6.4",
-  "ru.pavkin"                         %%% "scala-js-momentjs" % "0.4.1",
+  "ru.pavkin"                         %%% "scala-js-momentjs" % "0.5.0",
   "com.github.japgolly.scalajs-react" %%% "core"              % "0.11.3"
 )
 
