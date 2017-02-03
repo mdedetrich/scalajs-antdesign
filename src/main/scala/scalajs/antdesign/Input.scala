@@ -95,7 +95,7 @@ case class Input(`type`: js.UndefOr[Input.Type] = js.undefined,
 
   def apply(children: ReactNode*) = {
     val f =
-      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.Input)
+      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.Input)
     f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
   }
 }

@@ -126,7 +126,7 @@ case class TimePicker(prefixCls: js.UndefOr[String] = js.undefined,
 
   def apply(children: ReactNode*) = {
     val f =
-      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.TimePicker)
+      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.TimePicker)
     f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
   }
 }

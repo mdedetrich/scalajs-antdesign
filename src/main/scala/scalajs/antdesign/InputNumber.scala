@@ -109,7 +109,7 @@ case class InputNumber(min: js.UndefOr[Int] = js.undefined,
 
   def apply(children: ReactNode*) = {
     val f =
-      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.InputNumber)
+      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.InputNumber)
     f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
   }
 }

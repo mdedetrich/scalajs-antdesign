@@ -12,9 +12,12 @@ crossScalaVersions in ThisBuild := Seq(scalaVersion212, scalaVersion211)
 organization := "org.mdedetrich"
 
 libraryDependencies ++= Seq(
-  "org.webjars.npm"                   % "antd"                % "2.6.4",
   "ru.pavkin"                         %%% "scala-js-momentjs" % "0.5.0",
   "com.github.japgolly.scalajs-react" %%% "core"              % "0.11.3"
+)
+
+jsDependencies ++= Seq(
+  "org.webjars.npm" % "antd" % "2.6.4" / "dist/antd.js" commonJSName "antd"
 )
 
 enablePlugins(ScalaJSPlugin)

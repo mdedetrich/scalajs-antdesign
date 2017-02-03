@@ -96,7 +96,7 @@ case class Pagination(defaultCurrent: js.UndefOr[Int] = js.undefined,
 
   def apply(children: ReactNode*) = {
     val f =
-      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.Pagination)
+      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.Pagination)
     f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
   }
 }

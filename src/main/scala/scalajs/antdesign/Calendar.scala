@@ -124,7 +124,7 @@ case class Calendar(prefixCls: js.UndefOr[String] = js.undefined,
 
   def apply(children: ReactNode*) = {
     val f =
-      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.Calendar)
+      React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.Calendar)
     f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
   }
 }
@@ -211,7 +211,7 @@ object Calendar {
 
     def apply(children: ReactNode*) = {
       val f =
-        React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.Calendar)
+        React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.Calendar)
       f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
     }
   }
