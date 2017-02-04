@@ -20,4 +20,40 @@ jsDependencies ++= Seq(
   "org.webjars.npm" % "antd" % "2.6.4" / "dist/antd.js" commonJSName "antd"
 )
 
+publishMavenStyle := true
+
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ =>
+  false
+}
+
+pomExtra := <url>https://github.com/mdedetrich/scalajs-antdesign</url>
+  <licenses>
+    <license>
+      <name>BSD 3-Clause</name>
+      <url>https://opensource.org/licenses/BSD-3-Clause</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:mdedetrich/scalajs-antdesign.git</url>
+    <connection>scm:git:git@github.com:mdedetrich/scalajs-antdesign.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>mdedetrich</id>
+      <name>Matthew de Detrich</name>
+      <email>mdedetrich@gmail.com</email>
+    </developer>
+  </developers>
+
 enablePlugins(ScalaJSPlugin)
