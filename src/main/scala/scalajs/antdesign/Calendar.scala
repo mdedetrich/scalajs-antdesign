@@ -8,7 +8,7 @@ import scala.scalajs.js.{Dynamic, Object}
 import scala.scalajs.js.annotation.JSImport
 
 /**
-  * https://ant.design/components/calendar/
+  * https://ant.design/components/calendar/#API
   * @param value set date
   * @param defaultValue set default date
   * @param mode can be set to month or year
