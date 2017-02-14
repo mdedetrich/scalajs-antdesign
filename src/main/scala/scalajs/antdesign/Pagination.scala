@@ -3,12 +3,13 @@ package scalajs.antdesign
 import japgolly.scalajs.react.{CallbackTo, React, ReactComponentU_, ReactNode}
 
 import scala.scalajs.js
+import scala.scalajs.js.{Dynamic, Object}
 import scala.scalajs.js.annotation.JSImport
 
 /**
   * https://github.com/react-component/pagination#api
-  * @param defaultCurrent default current page number
   * @param current current page number
+  * @param defaultCurrent default current page number
   * @param total total number of data
   * @param defaultPageSize default number of data per page
   * @param pageSize number of data per page
@@ -17,34 +18,32 @@ import scala.scalajs.js.annotation.JSImport
   * @param pageSizeOptions specify the sizeChanger selections
   * @param onShowSizeChange a callback function, can be executed when [[pageSize]] is changing
   * @param showQuickJumper determine whether you can jump to a page directly
-  * @param showTotal to display the total number and range
-  * @param className className of pagination
+  * @param size specify the size of Pagination, can be set to small
   * @param simple whether to use simple mode
+  * @param showTotal to display the total number and range
   * @param local to set l10n config
-  * @param style the style of pagination
   */
 case class Pagination(defaultCurrent: js.UndefOr[Int] = js.undefined,
                       current: js.UndefOr[Int] = js.undefined,
                       total: js.UndefOr[Int] = js.undefined,
                       defaultPageSize: js.UndefOr[Int] = js.undefined,
                       pageSize: js.UndefOr[Int] = js.undefined,
-                      onChange: js.UndefOr[(js.Dynamic) => CallbackTo[Unit]] = js.undefined,
+                      onChange: js.UndefOr[(js.Dynamic, Int) => CallbackTo[Unit]] = js.undefined,
                       showSizeChanger: js.UndefOr[Boolean] = js.undefined,
                       pageSizeOptions: js.UndefOr[js.Array[Int]] = js.undefined,
                       onShowSizeChange: js.UndefOr[(Int, Int) => CallbackTo[Unit]] = js.undefined,
                       showQuickJumper: js.UndefOr[Boolean] = js.undefined,
-                      showTotal: js.UndefOr[(Int, Int) => CallbackTo[Unit]] = js.undefined,
-                      className: js.UndefOr[String] = js.undefined,
+                      size: js.UndefOr[Pagination.Size] = js.undefined,
                       simple: js.UndefOr[js.Dictionary[js.Any]] = js.undefined,
-                      local: js.UndefOr[Pagination.Locale] = js.undefined,
-                      style: js.UndefOr[js.Dictionary[js.Any]] = js.undefined) {
-  def toJS = {
+                      showTotal: js.UndefOr[(Int, Int) => CallbackTo[Unit]] = js.undefined,
+                      local: js.UndefOr[Pagination.Locale] = js.undefined) {
+  def toJS: Object with Dynamic = {
     val p = js.Dynamic.literal()
-    defaultCurrent.foreach { x =>
-      p.updateDynamic("defaultCurrent")(x)
-    }
     current.foreach { x =>
       p.updateDynamic("current")(x)
+    }
+    defaultCurrent.foreach { x =>
+      p.updateDynamic("defaultCurrent")(x)
     }
     total.foreach { x =>
       p.updateDynamic("total")(x)
@@ -57,7 +56,7 @@ case class Pagination(defaultCurrent: js.UndefOr[Int] = js.undefined,
     }
     onChange.foreach { x =>
       p.updateDynamic("onChange")(
-        (v1: js.Dynamic) => x(v1).runNow()
+        (v1: js.Dynamic, v2: Int) => x(v1, v2).runNow()
       )
     }
     showSizeChanger.foreach { x =>
@@ -79,22 +78,16 @@ case class Pagination(defaultCurrent: js.UndefOr[Int] = js.undefined,
         (v1: Int, v2: Int) => x(v1, v2).runNow()
       )
     }
-    className.foreach { x =>
-      p.updateDynamic("className")(x)
-    }
     simple.foreach { x =>
       p.updateDynamic("simple")(x)
     }
     local.foreach { x =>
       p.updateDynamic("local")(x.toJS)
     }
-    style.foreach { x =>
-      p.updateDynamic("style")(x)
-    }
     p
   }
 
-  def apply(children: ReactNode*) = {
+  def apply(children: ReactNode*): ReactComponentU_ = {
     val f =
       React.asInstanceOf[js.Dynamic].createFactory(js.Dynamic.global.antd.Pagination)
     f(toJS, children.toJsArray).asInstanceOf[ReactComponentU_]
@@ -102,6 +95,12 @@ case class Pagination(defaultCurrent: js.UndefOr[Int] = js.undefined,
 }
 
 object Pagination {
+  sealed abstract class Size(val id: String)
+
+  object Size {
+    case object Small extends Size("small")
+  }
+
   case class Locale(itemsPerPage: String,
                     jumpTo: String,
                     page: String,
@@ -109,7 +108,7 @@ object Pagination {
                     nextPage: String,
                     prev5: String,
                     next5: String) {
-    def toJS = {
+    def toJS: Object with Dynamic = {
       val p = js.Dynamic.literal()
       p.updateDynamic("items_per_page")(itemsPerPage)
       p.updateDynamic("jump_to")(jumpTo)

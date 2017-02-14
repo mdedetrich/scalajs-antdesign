@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
 )
 
 jsDependencies ++= Seq(
-  "org.webjars.npm" % "antd" % "2.6.4" / "dist/antd.js" commonJSName "antd"
+  "org.webjars.npm" % "antd" % "2.7.1" / "dist/antd.js" commonJSName "antd"
 )
 
 publishMavenStyle := true
