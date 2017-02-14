@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Dynamic, Object}
 
 /**
-  * https://ant.design/components/time-picker/#API
+  * @see https://ant.design/components/time-picker/#API
   * @param value to set default time
   * @param defaultValue to set time
   * @param placeholder display when there's no value

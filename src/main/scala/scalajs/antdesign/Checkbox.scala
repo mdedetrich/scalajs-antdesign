@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Dynamic, Object}
 
 /**
-  * https://ant.design/components/checkbox/
+  * @see https://ant.design/components/checkbox/#API
   * @param checked Specifies whether the checkbox is selected.
   * @param defaultChecked Specifies the initial state: whether or not the checkbox is selected.
   * @param onChange The callback function that is triggered when the state changes.

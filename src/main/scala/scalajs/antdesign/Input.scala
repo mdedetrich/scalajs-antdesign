@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Dynamic, Object, |}
 
 /**
-  * https://ant.design/components/input/#API
+  * @see https://ant.design/components/input/#API
   * @param `type` The type of input, [[scalajs.antdesign.Input.Type.Text]] or [[scalajs.antdesign.Input.Type.TextArea]]
   * @param id The ID for input
   * @param size The input content value

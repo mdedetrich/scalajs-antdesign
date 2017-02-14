@@ -8,7 +8,7 @@ import scala.scalajs.js.{Dynamic, Object, |}
 // Currently missing styles property, need to figure this out
 
 /**
-  * https://ant.design/components/input-number/#API
+  * @see https://ant.design/components/input-number/#API
   * @param min Specifies the minimum value
   * @param max Specifies the maximum value
   * @param step The number to which the current value is increased or decreased. It can be an integer or decimal.

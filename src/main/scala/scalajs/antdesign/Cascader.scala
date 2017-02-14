@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Dynamic, Object, |}
 
 /**
-  * https://ant.design/components/cascader/
+  * @see https://ant.design/components/cascader/#API
   * @param options data options of cascade
   * @param defaultValue initial selected value
   * @param value selected value

@@ -7,7 +7,7 @@ import scala.scalajs.js.{Dynamic, Object}
 import scala.scalajs.js.annotation.JSImport
 
 /**
-  * https://github.com/react-component/pagination#api
+  * @see https://github.com/react-component/pagination#api
   * @param current current page number
   * @param defaultCurrent default current page number
   * @param total total number of data

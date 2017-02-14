@@ -7,7 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.{Dynamic, Object, |}
 
 /**
-  * https://ant.design/components/table/#API
+  * @see https://ant.design/components/table/#API
   * @param rowSelection row selection config
   * @param pagination pagination config, hide it via setting to false
   * @param size size of table: [[scalajs.antdesign.Table.Size.Default]], [[scalajs.antdesign.Table.Size.Middle]] or [[scalajs.antdesign.Table.Size.Small]]
