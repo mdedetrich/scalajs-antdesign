@@ -1,7 +1,7 @@
 package scalajs.antdesign
 
 import japgolly.scalajs.react.{CallbackTo, React, ReactComponentU_, ReactNode}
-import org.scalajs.dom.raw.Event
+import org.scalajs.dom.Event
 
 import scala.scalajs.js
 import scala.scalajs.js.{Dynamic, Object}
