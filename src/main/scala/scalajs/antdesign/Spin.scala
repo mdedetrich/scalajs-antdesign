@@ -12,23 +12,22 @@ import scala.scalajs.js.{Dynamic, Object}
   * @param tip Customize description content
   * @param delay Specifies a delay for loading state
   */
-
 case class Spin(size: js.UndefOr[Size] = js.undefined,
                 spinning: js.UndefOr[Boolean] = js.undefined,
                 tip: js.UndefOr[String] = js.undefined,
                 delay: js.UndefOr[Int] = js.undefined) {
   def toJS: Object with Dynamic = {
     val p = js.Dynamic.literal()
-    size.foreach{ x =>
+    size.foreach { x =>
       p.updateDynamic("size")(x.id)
     }
-    spinning.foreach{ x =>
-      p.updateDynamic("size")(x)
+    spinning.foreach { x =>
+      p.updateDynamic("spinning")(x)
     }
-    tip.foreach{ x =>
+    tip.foreach { x =>
       p.updateDynamic("tip")(x)
     }
-    delay.foreach{x =>
+    delay.foreach { x =>
       p.updateDynamic("delay")(x)
     }
     p
