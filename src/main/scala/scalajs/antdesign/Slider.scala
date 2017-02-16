@@ -35,54 +35,53 @@ case class Slider(range: js.UndefOr[Boolean] = js.undefined,
                   vertical: js.UndefOr[Boolean] = js.undefined,
                   onChange: js.UndefOr[Double => CallbackTo[Unit]] = js.undefined,
                   onAfterChange: js.UndefOr[Double => CallbackTo[Unit]] = js.undefined,
-                  tipFormatter: js.UndefOr[Double => CallbackTo[String]] = js.undefined
-                 ) {
+                  tipFormatter: js.UndefOr[Double => CallbackTo[String]] = js.undefined) {
   def toJS: Object with Dynamic = {
     val p = js.Dynamic.literal()
-    range.foreach{ x =>
+    range.foreach { x =>
       p.updateDynamic("range")(x)
     }
-    min.foreach{ x =>
+    min.foreach { x =>
       p.updateDynamic("min")(x)
     }
-    max.foreach{ x =>
+    max.foreach { x =>
       p.updateDynamic("max")(x)
     }
-    step.foreach{ x =>
+    step.foreach { x =>
       p.updateDynamic("step")(x.asInstanceOf[js.Any])
     }
-    marks.foreach{ x =>
+    marks.foreach { x =>
       p.updateDynamic("marks")(x.asInstanceOf[js.Any])
     }
-    dots.foreach{ x =>
+    dots.foreach { x =>
       p.updateDynamic("dots")(x)
     }
-    value.foreach{ x =>
+    value.foreach { x =>
       p.updateDynamic("value")(x.asInstanceOf[js.Any])
     }
-    defaultValue.foreach{ x =>
+    defaultValue.foreach { x =>
       p.updateDynamic("defaultValue")(x.asInstanceOf[js.Any])
     }
-    included.foreach{ x =>
+    included.foreach { x =>
       p.updateDynamic("included")(x)
     }
-    disabled.foreach{ x =>
+    disabled.foreach { x =>
       p.updateDynamic("disabled")(x)
     }
-    vertical.foreach{ x =>
+    vertical.foreach { x =>
       p.updateDynamic("vertical")(x)
     }
-    onChange.foreach{ x =>
+    onChange.foreach { x =>
       p.updateDynamic("onChange")(
         (v1: Double) => x(v1).runNow()
       )
     }
-    onAfterChange.foreach{ x =>
+    onAfterChange.foreach { x =>
       p.updateDynamic("onAfterChange")(
         (v1: Double) => x(v1).runNow()
       )
     }
-    tipFormatter.foreach{ x =>
+    tipFormatter.foreach { x =>
       p.updateDynamic("tipFormatter")(
         (v1: Double) => x(v1).runNow()
       )

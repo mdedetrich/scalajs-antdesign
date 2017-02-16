@@ -18,16 +18,16 @@ case class Card(title: js.UndefOr[String | ReactNode] = js.undefined,
                 bodyStyle: js.UndefOr[js.Dictionary[js.Any]] = js.undefined) {
   def toJS: Object with Dynamic = {
     val p = js.Dynamic.literal()
-    title.foreach{ x =>
+    title.foreach { x =>
       p.updateDynamic("title")(x.asInstanceOf[js.Any])
     }
-    extra.foreach{ x =>
+    extra.foreach { x =>
       p.updateDynamic("extra")(x.asInstanceOf[js.Any])
     }
-    bordered.foreach{ x =>
+    bordered.foreach { x =>
       p.updateDynamic("bordered")(x)
     }
-    bodyStyle.foreach{ x =>
+    bodyStyle.foreach { x =>
       p.updateDynamic("bodyStyle")(x)
     }
     p

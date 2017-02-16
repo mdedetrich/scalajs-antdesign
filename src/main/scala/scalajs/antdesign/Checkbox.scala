@@ -12,19 +12,18 @@ import scala.scalajs.js.{Dynamic, Object}
   * @param defaultChecked Specifies the initial state: whether or not the checkbox is selected.
   * @param onChange The callback function that is triggered when the state changes.
   */
-
 case class Checkbox(checked: js.UndefOr[Boolean] = js.undefined,
                     defaultChecked: js.UndefOr[Boolean] = js.undefined,
                     onChange: js.UndefOr[(Event) => CallbackTo[Unit]] = js.undefined) {
   def toJS: Object with Dynamic = {
     val p = js.Dynamic.literal()
-    checked.foreach{ x =>
+    checked.foreach { x =>
       p.updateDynamic("checked")(x)
     }
-    defaultChecked.foreach{ x =>
+    defaultChecked.foreach { x =>
       p.updateDynamic("defaultChecked")(x)
     }
-    onChange.foreach{ x =>
+    onChange.foreach { x =>
       p.updateDynamic("onChange")(x)
     }
     p
