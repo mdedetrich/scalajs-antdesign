@@ -33,31 +33,31 @@ import scala.scalajs.js.{Dynamic, Object, |}
   * @param onDragEnd Defines a function will be called when the onDragEnd event occurs
   * @param onDrop Defines a function will be called when the onDrop event occurs
   */
-
-case class Tree(multiple: js.UndefOr[Boolean] = js.undefined,
-                checkable: js.UndefOr[Boolean] = js.undefined,
-                defaultExpandAll: js.UndefOr[Boolean] = js.undefined,
-                defaultExpandedKeys: js.UndefOr[js.Array[String]] = js.undefined,
-                expandedKeys: js.UndefOr[js.Array[String]] = js.undefined,
-                autoExpandParent: js.UndefOr[Boolean] = js.undefined,
-                defaultCheckedKeys: js.UndefOr[js.Array[String]] = js.undefined,
-                checkedKeys: js.UndefOr[js.Array[String] | js.Dictionary[js.Any]] = js.undefined,
-                checkStrictly: js.UndefOr[Boolean] = js.undefined,
-                defaultSelectedKeys: js.UndefOr[js.Array[String]] = js.undefined,
-                selectedKeys: js.UndefOr[js.Array[String]] = js.undefined,
-                onExpand: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Unit]] = js.undefined,
-                onCheck: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Unit]] = js.undefined,
-                onSelect: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Unit]] = js.undefined,
-                filterTreeNode: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Boolean]] = js.undefined,
-                loadData: js.UndefOr[Boolean] = js.undefined,
-                onRightClick: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
-                draggable: js.UndefOr[Boolean] = js.undefined,
-                onDragStart: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
-                onDragEnter: js.UndefOr[(Event, ReactNode, js.Array[String]) => CallbackTo[Unit]] = js.undefined,
-                onDragOver: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
-                onDragLeave: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
-                onDragEnd: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
-                onDrop: js.UndefOr[(Event, ReactNode, ReactNode, js.Array[String]) => CallbackTo[Unit]] = js.undefined) {
+case class Tree(
+    multiple: js.UndefOr[Boolean] = js.undefined,
+    checkable: js.UndefOr[Boolean] = js.undefined,
+    defaultExpandAll: js.UndefOr[Boolean] = js.undefined,
+    defaultExpandedKeys: js.UndefOr[js.Array[String]] = js.undefined,
+    expandedKeys: js.UndefOr[js.Array[String]] = js.undefined,
+    autoExpandParent: js.UndefOr[Boolean] = js.undefined,
+    defaultCheckedKeys: js.UndefOr[js.Array[String]] = js.undefined,
+    checkedKeys: js.UndefOr[js.Array[String] | js.Dictionary[js.Any]] = js.undefined,
+    checkStrictly: js.UndefOr[Boolean] = js.undefined,
+    defaultSelectedKeys: js.UndefOr[js.Array[String]] = js.undefined,
+    selectedKeys: js.UndefOr[js.Array[String]] = js.undefined,
+    onExpand: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Unit]] = js.undefined,
+    onCheck: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Unit]] = js.undefined,
+    onSelect: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Unit]] = js.undefined,
+    filterTreeNode: js.UndefOr[js.Dictionary[js.Any] => CallbackTo[Boolean]] = js.undefined,
+    loadData: js.UndefOr[Boolean] = js.undefined,
+    onRightClick: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
+    draggable: js.UndefOr[Boolean] = js.undefined,
+    onDragStart: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
+    onDragEnter: js.UndefOr[(Event, ReactNode, js.Array[String]) => CallbackTo[Unit]] = js.undefined,
+    onDragOver: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
+    onDragLeave: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
+    onDragEnd: js.UndefOr[(Event, ReactNode) => CallbackTo[Unit]] = js.undefined,
+    onDrop: js.UndefOr[(Event, ReactNode, ReactNode, js.Array[String]) => CallbackTo[Unit]] = js.undefined) {
 
   def toJS: Object with Dynamic = {
     val p = js.Dynamic.literal()
@@ -175,7 +175,6 @@ object Tree {
     * @param key it's used with (default)ExpandedKeys / (default)CheckedKeys / (default)SelectedKeys. P.S.: it must be unique in all of treeNodes of the tree!
     * @param isLeaf whether it's leaf node
     */
-
   case class TreeNode(disabled: js.UndefOr[Boolean] = js.undefined,
                       disableCheckbox: js.UndefOr[Boolean] = js.undefined,
                       title: js.UndefOr[String | ReactNode] = js.undefined,
