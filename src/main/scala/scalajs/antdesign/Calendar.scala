@@ -1,11 +1,11 @@
 package scalajs.antdesign
 
-import japgolly.scalajs.react.{CallbackTo, React, ReactComponentU_, ReactElement, ReactNode}
+import japgolly.scalajs.react.{CallbackTo, React, ReactComponentU_, ReactNode}
 import moment.Date
 
 import scala.scalajs.js
-import scala.scalajs.js.{Dynamic, Object}
 import scala.scalajs.js.annotation.JSImport
+import scala.scalajs.js.{Dynamic, Object}
 
 /**
   * @see https://ant.design/components/calendar/#API
